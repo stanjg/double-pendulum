@@ -1,5 +1,4 @@
 <!DOCTYPE html><html lang="en"><head>
-  <link rel="stylesheet" type="text/css" href="style.css">
   <meta charset="utf-8">
 
 </head>
@@ -46,8 +45,8 @@
   <label for="line-type">Line Type</label>
   <div class="input-container">
     <select name="line-type" id="line-type">
-      <option value="rainbow">Rainbow</option>
       <option value="solid">Solid Color</option>
+      <option value="rainbow">Rainbow</option>
       <option value="dots">Dots</option>
       <option value="disabled">Disabled</option>
     </select>
@@ -103,14 +102,19 @@
     <span id="ball-size-value" class="range-value">25</span>
   </div>
 
-  <label for="show-axes">Show Axes</label>
-  <div class="input-container">
+  <div class="input-container checkbox-container">
+    <label for="show-axes">Show Axes</label>
     <input type="checkbox" id="show-axes">
   </div>
 
-  <label for="show-pendulums">Show Pendulums</label>
-  <div class="input-container">
+  <div class="input-container checkbox-container">
+    <label for="show-pendulums">Show Pendulums</label>
     <input type="checkbox" id="show-pendulums" checked>
+  </div>
+
+  <div class="input-container checkbox-container">
+    <label for="show-debug">Show Debug Data</label>
+    <input type="checkbox" id="show-debug">
   </div>
 
   <div class="input-container">
@@ -118,11 +122,17 @@
   </div>
 
   <div class="input-container">
-    <input id="reset-button" type="button" value="Reset">
+    <input id="reset-button" type="button" value="Reset Randomly">
+  </div>
+
+  <div class="side-bar-footer">
+    <span>Source Code: <a href="https://github.com/stanjg/double-pendulum" target="_blank">Github</a></span>
   </div>
 
   <div style="height: 50px;"></div>
 </div>
+
+<span id="copyright">© Stan Gabes 2021</span>
 
 <script type="module" src="/main.js"></script>
 </body></html>

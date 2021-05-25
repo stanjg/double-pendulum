@@ -7,6 +7,41 @@ export const drawBackground = () => {
     s.background(bgColor[0], bgColor[1], bgColor[2]);
 }
 
+export const drawDebugData = () => {
+    s.fill(100);
+    s.textSize(20);
+    s.textFont('Arial');
+
+    let toPrint = [];
+
+    let timeRunning = (Math.round(store.timeSimulationRunning / 100) / 10).toString();
+    if (! timeRunning.includes('.')) {
+        timeRunning += '.0';
+    }
+    toPrint.push('Time Running: ' + timeRunning + ' (s)');
+
+    let a1 = (Math.round((store.a1 / Math.PI) * 1000000) / 1000000).toString();
+    if (! a1.includes('.')) {
+        a1 += '.000000';
+    }
+    toPrint.push('Upper Angle: ' + a1 + 'π');
+
+    let a2 = (Math.round((store.a2 / Math.PI) * 1000000) / 1000000).toString();
+    if (! a2.includes('.')) {
+        a2 += '.000000';
+    }
+    toPrint.push('Lower Angle: ' + a2 + 'π');
+
+    let frameRate = Math.round((1 / (s.deltaTime / 1000)) * 10) / 10;
+    toPrint.push('FPS: ' + frameRate);
+
+    let y = s.height - 20;
+    toPrint.forEach((text) => {
+        s.text(text, 20, y);
+        y -= 25;
+    });
+}
+
 export const drawTrail = () => {
     switch (store.trailType) {
         case 'solid':

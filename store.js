@@ -13,6 +13,8 @@ export default {
     trail: [],
     startedAt: new Date().getTime(),
     menuOpen: true,
+    timeSimulationRunning: 0,
+    timeLastFrame: 0,
 
     // Configurable
     L: 180,
@@ -23,7 +25,7 @@ export default {
     g: .4,
     simulationPaused: true,
     restartAfter: 30,
-    trailType: 'rainbow', // rainbow, solid, dots
+    trailType: 'solid', // rainbow, solid, dots, disabled
     rainbowSpeed: 4,
     trailColor: [0, 255, 0],
     trailWidth: 2,
@@ -37,4 +39,5 @@ export default {
     backgroundColor: [24, 24, 24],
     hueOffset: 0,
     trailDecay: 3000,
-}
+    showDebug: false,
+};

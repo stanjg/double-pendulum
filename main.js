@@ -1,11 +1,12 @@
+import './style.css';
 import p5 from 'p5';
 import store from './store';
-import {drawAxes, drawBackground, drawPendulums, drawTrail} from "./graphics";
+import {drawAxes, drawBackground, drawDebugData, drawPendulums, drawTrail} from "./graphics";
 import {doPhysics} from "./physics";
 import {TrailHistory} from "./trailGraphics";
 import './inputHandler';
 
-export const resetRandom = () => {
+export const resetRandom = (pause = true) => {
     store.a1_v = 0;
     store.a2_v = 0;
     store.a1_a = 0;
@@ -14,10 +15,24 @@ export const resetRandom = () => {
     store.a2 = sketch.random(0, 2 * Math.PI);
     store.start_a1 = store.a1;
     store.start_a2 = store.a2;
-    store.trail = [];
     store.hueOffset = 0;
-    store.simulationPaused = true;
+    store.timeSimulationRunning = 0;
+    store.trail = [];
+    store.x1 = store.L * Math.sin(store.a1);
+    store.y1 = store.L * Math.cos(store.a1);
+    store.x2 = store.x1 + store.L * Math.sin(store.a2);
+    store.y2 = store.y1 + store.L * Math.cos(store.a2);
+    setSimulationPaused(pause);
 }
+
+export const setSimulationPaused = (paused) => {
+    store.simulationPaused = paused;
+    document.getElementById('start-stop-button').value = paused ? 'Start' : 'Stop';
+
+    if (! paused) {
+        store.timeLastFrame = new Date().getTime();
+    }
+};
 
 export const sketch = new p5((s) => {
     s.setup = () => {
@@ -50,10 +65,24 @@ export const sketch = new p5((s) => {
             drawAxes();
         }
 
+        if (store.showDebug) {
+            drawDebugData();
+        }
+
         drawTrail();
 
         if (store.drawPendulums) {
             drawPendulums();
+        }
+
+        let time = new Date().getTime();
+        if (! store.simulationPaused) {
+            store.timeSimulationRunning += time - store.timeLastFrame;
+        }
+        store.timeLastFrame = time;
+
+        if (store.timeSimulationRunning >= store.restartAfter * 1000) {
+            resetRandom(false);
         }
     }
 

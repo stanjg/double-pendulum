@@ -11,7 +11,7 @@ export const drawSolidTrail = () => {
     s.strokeWeight(store.trailWidth);
     s.beginShape();
     history.forEach((vector) => {
-        s.vertex(vector.x, vector.y);
+        s.vertex(toScreenPointX(vector.x), toScreenPointY(vector.y));
     });
     s.endShape();
 }
@@ -21,7 +21,7 @@ export const drawDottedTrail = () => {
     s.fill(trailColor[0], trailColor[1], trailColor[2]);
 
     store.trail.forEach((particle) => {
-        s.circle(particle.x, particle.y, store.trailWidth*2);
+        s.circle(toScreenPointX(particle.x), toScreenPointY(particle.y), store.trailWidth*2);
     });
 }
 
@@ -39,7 +39,7 @@ export const drawRainbowTrail = () => {
         }
 
         s.stroke(color, 100, 100);
-        s.line(particle.x, particle.y, nextParticle.x, nextParticle.y);
+        s.line(toScreenPointX(particle.x), toScreenPointY(particle.y), toScreenPointX(nextParticle.x), toScreenPointY(nextParticle.y));
     }
 
     store.hueOffset += store.rainbowSpeed;
@@ -53,8 +53,8 @@ export const TrailHistory = class {
     index;
 
     constructor(x, y) {
-        this.x = toScreenPointX(x);
-        this.y = toScreenPointY(y);
+        this.x = x;
+        this.y = y;
         this.timeCreated = new Date().getTime();
         this.index = store.trail.length > 0 ? store.trail[store.trail.length-1].index + 1 : 0;
     }

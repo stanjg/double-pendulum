@@ -25,6 +25,18 @@ canvas {
   margin-top: -20px;
 }
 
+.side-bar-footer {
+  margin-top: 25px;
+}
+
+a {
+  color: #e7e7e7;
+}
+
+a:hover {
+  color: #cfcfcf;
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
@@ -52,6 +64,29 @@ canvas {
 
 .header > h1 {
   flex-grow: 1;
+}
+
+#copyright {
+  color: rgba(255, 255, 255, .3);
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  font-family: Arial, sans-serif;
+  font-size: 1.2rem;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-container > label {
+  flex-grow: 1;
+  display: block;
+}
+
+input[type=checkbox] {
+  width: auto;
 }
 
 .header > span {
@@ -100,8 +135,4 @@ select {
 .range-value {
   width: 4ch;
   text-align: center;
-}
-
-input[type=checkbox] {
-
 }

@@ -1,5 +1,5 @@
 import store from "./store";
-import {resetRandom, sketch} from "./main";
+import {resetRandom, setSimulationPaused, sketch} from "./main";
 
 document.getElementById('stick-length').oninput = (e) => {
     store.L = parseInt(e.target.value);
@@ -55,8 +55,7 @@ document.getElementById('line-type').onchange = (e) => {
 }
 
 document.getElementById('start-stop-button').onclick = (e) => {
-    store.simulationPaused = !store.simulationPaused;
-    e.target.value = store.simulationPaused ? 'Start' : 'Stop';
+    setSimulationPaused(! store.simulationPaused);
 }
 
 document.getElementById('line-color').oninput = (e) => {
@@ -85,6 +84,10 @@ document.getElementById('show-axes').onchange = (e) => {
 
 document.getElementById('show-pendulums').onchange = (e) => {
     store.drawPendulums = e.target.checked;
+}
+
+document.getElementById('show-debug').onchange = (e) => {
+    store.showDebug = e.target.checked;
 }
 
 document.getElementById('close-menu').onclick = () => {
