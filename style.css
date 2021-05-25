@@ -1,0 +1,107 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background: black;
+  overflow-y: hidden;
+}
+canvas {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -99;
+}
+#side-bar {
+  max-width: 300px;
+  width: 300px;
+  position: absolute;
+  right: 0;
+  background: rgb(70, 70, 70);
+  padding: 20px;
+  color: #e7e7e7;
+  font-family: Arial, sans-serif;
+  overflow-y: auto;
+  height: 100vh;
+  margin-top: -20px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.header > h1 {
+  flex-grow: 1;
+}
+
+.header > span {
+  color: white;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#open-menu {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  color: white;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  background: rgb(24, 24, 24);
+  color: rgb(220, 220, 220);
+  outline-color: black;
+}
+
+select {
+  background: rgb(24, 24, 24);
+  color: rgb(220, 220, 220);
+}
+
+select {
+  width: 100%;
+  padding: 5px 10px;
+  outline-color: black;
+}
+
+.range-input {
+  display: flex;
+}
+
+.input-container {
+  margin-bottom: 10px;
+}
+
+.range-value {
+  width: 4ch;
+  text-align: center;
+}
+
+input[type=checkbox] {
+
+}
