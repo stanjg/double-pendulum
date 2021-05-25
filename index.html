@@ -1,0 +1,130 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+
+<script type="module" crossorigin src="/assets/index.bf521bbd.js"></script>
+  <link rel="modulepreload" href="/assets/vendor.4fccdb7b.js">
+  <link rel="stylesheet" href="/assets/index.fb5fef42.css">
+</head>
+<body>
+
+<span id="open-menu">+</span>
+
+<div id="side-bar">
+  <div class="header">
+    <h1>Settings</h1>
+    <span id="close-menu">x</span>
+  </div>
+
+  <label for="stick-length">Stick Length</label>
+  <div class="input-container range-input">
+    <input id="stick-length" type="range" min="10" max="400" value="180">
+    <span id="stick-length-value" class="range-value">180</span>
+  </div>
+
+  <label for="upper-mass">Upper Mass</label>
+  <div class="input-container range-input">
+    <input id="upper-mass" type="range" min="1" max="20" value="4" step="0.2">
+    <span id="upper-mass-value" class="range-value">4</span>
+  </div>
+
+  <label for="upper-mass">Lower Mass</label>
+  <div class="input-container range-input">
+    <input id="lower-mass" type="range" min="1" max="20" value="2" step="0.2">
+    <span id="lower-mass-value" class="range-value">2</span>
+  </div>
+
+  <label for="g-constant">Gravitational Constant</label>
+  <div class="input-container range-input">
+    <input id="g-constant" type="range" min="0.1" max="2" value="0.4" step="0.02">
+    <span id="g-constant-value" class="range-value">0.4</span>
+  </div>
+
+  <label for="restart-after">Restart After (seconds)</label>
+  <div class="input-container range-input">
+    <input id="restart-after" type="range" min="5" max="240" value="30">
+    <span id="restart-after-value" class="range-value">30</span>
+  </div>
+
+  <label for="line-type">Line Type</label>
+  <div class="input-container">
+    <select name="line-type" id="line-type">
+      <option value="rainbow">Rainbow</option>
+      <option value="solid">Solid Color</option>
+      <option value="dots">Dots</option>
+      <option value="disabled">Disabled</option>
+    </select>
+  </div>
+
+  <label for="line-width">Line Width</label>
+  <div class="input-container range-input">
+    <input id="line-width" type="range" min="1" max="30" value="2">
+    <span id="line-width-value" class="range-value">2</span>
+  </div>
+
+  <label for="rainbow-speed">Rainbow Speed</label>
+  <div class="input-container range-input">
+    <input id="rainbow-speed" type="range" min="0" max="36" value="4">
+    <span id="rainbow-speed-value" class="range-value">4</span>
+  </div>
+
+  <label for="line-color">Line Color</label>
+  <div class="input-container">
+    <input type="color" id="line-color" value="#00ff00">
+  </div>
+
+  <label for="line-decay">Line Decay</label>
+  <div class="input-container range-input">
+    <input id="line-decay" type="range" min="0" max="3000" value="2000">
+    <span id="line-decay-value" class="range-value">2000</span>
+  </div>
+
+  <label for="stick-color">Stick Color</label>
+  <div class="input-container">
+    <input type="color" id="stick-color" value="#c8c8c8">
+  </div>
+
+  <label for="ball-color">Ball Color</label>
+  <div class="input-container">
+    <input type="color" id="ball-color" value="#6e6e6e">
+  </div>
+
+  <label for="background-color">Background Color</label>
+  <div class="input-container">
+    <input type="color" id="background-color" value="#181818">
+  </div>
+
+  <label for="stick-width">Stick Width</label>
+  <div class="input-container range-input">
+    <input id="stick-width" type="range" min="1" max="30" value="3">
+    <span id="stick-width-value" class="range-value">3</span>
+  </div>
+
+  <label for="ball-size">Ball Size</label>
+  <div class="input-container range-input">
+    <input id="ball-size" type="range" min="1" max="50" value="25">
+    <span id="ball-size-value" class="range-value">25</span>
+  </div>
+
+  <label for="show-axes">Show Axes</label>
+  <div class="input-container">
+    <input type="checkbox" id="show-axes">
+  </div>
+
+  <label for="show-pendulums">Show Pendulums</label>
+  <div class="input-container">
+    <input type="checkbox" id="show-pendulums" checked>
+  </div>
+
+  <div class="input-container">
+    <input id="start-stop-button" type="button" value="Start">
+  </div>
+
+  <div class="input-container">
+    <input id="reset-button" type="button" value="Reset">
+  </div>
+
+  <div style="height: 50px;"></div>
+</div>
+
+
+</body></html>
