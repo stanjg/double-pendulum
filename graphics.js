@@ -7,10 +7,26 @@ export const drawBackground = () => {
     s.background(bgColor[0], bgColor[1], bgColor[2]);
 }
 
+export const drawAngles = () => {
+    let stickColor = store.stickColor;
+    let filLColor = s.color(stickColor[0], stickColor[1], stickColor[2]);
+    filLColor.setAlpha(50);
+    s.fill(filLColor);
+    s.stroke(stickColor[0], stickColor[1], stickColor[2]);
+    s.strokeWeight(2);
+
+    let a1 = store.a1 % (2 * Math.PI);
+    s.arc(toScreenPointX(0), toScreenPointY(0), store.L * 0.8, store.L * 0.8, store.x1 < 0 ? Math.PI * 0.5 : (-1 * a1 + Math.PI * 0.5), store.x1 >= 0 ? Math.PI * 0.5 : (-1 * a1 + Math.PI * 0.5), s.PIE);
+
+    let a2 = store.a2 % (2 * Math.PI);
+    s.arc(toScreenPointX(store.x1), toScreenPointY(store.y1), store.L * 0.8, store.L * 0.8, store.x2 < store.x1 ? Math.PI * 0.5 : (-1 * a2 + Math.PI * 0.5), store.x2 >= store.x1 ? Math.PI * 0.5 : (-1 * a2 + Math.PI * 0.5), s.PIE);
+}
+
 export const drawDebugData = () => {
     s.fill(100);
     s.textSize(20);
     s.textFont('Arial');
+    s.noStroke();
 
     let toPrint = [];
 

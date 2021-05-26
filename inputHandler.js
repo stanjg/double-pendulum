@@ -86,6 +86,10 @@ document.getElementById('show-pendulums').onchange = (e) => {
     store.drawPendulums = e.target.checked;
 }
 
+document.getElementById('show-angles').onchange = (e) => {
+    store.showAngles = e.target.checked;
+}
+
 document.getElementById('show-debug').onchange = (e) => {
     store.showDebug = e.target.checked;
 }

@@ -40,4 +40,5 @@ export default {
     hueOffset: 0,
     trailDecay: 3000,
     showDebug: false,
+    showAngles: false,
 };

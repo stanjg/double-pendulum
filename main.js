@@ -1,7 +1,7 @@
 import './style.css';
 import p5 from 'p5';
 import store from './store';
-import {drawAxes, drawBackground, drawDebugData, drawPendulums, drawTrail} from "./graphics";
+import {drawAngles, drawAxes, drawBackground, drawDebugData, drawPendulums, drawTrail} from "./graphics";
 import {doPhysics} from "./physics";
 import {TrailHistory} from "./trailGraphics";
 import './inputHandler';
@@ -38,6 +38,8 @@ export const sketch = new p5((s) => {
     s.setup = () => {
         s.createCanvas(window.innerWidth - 300, window.innerHeight);
 
+        s.frameRate(30);
+
         // Set start angles
         store.a1 = store.start_a1;
         store.a2 = store.start_a2;
@@ -70,6 +72,10 @@ export const sketch = new p5((s) => {
         }
 
         drawTrail();
+
+        if (store.showAngles) {
+            drawAngles();
+        }
 
         if (store.drawPendulums) {
             drawPendulums();
