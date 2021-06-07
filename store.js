@@ -22,7 +22,7 @@ export default {
     m2: 2,
     start_a1: Math.PI,
     start_a2: Math.PI + 0.00001,
-    g: .4,
+    g: 1.4,
     simulationPaused: true,
     restartAfter: 30,
     trailType: 'solid', // rainbow, solid, dots, disabled
